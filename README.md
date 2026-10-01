@@ -34,7 +34,7 @@ This repository serves as an end-to-end incident handling demonstration of an **
 
 ## Investigation Artifacts & Evidence Chain
 
-### 1. Endpoint Forensics (Host Cache Poisoning)
+### Endpoint Forensics (Host Cache Poisoning)
 Execution of `arp -a` on the victim host revealed duplicate Layer 2 physical associations, proving unauthorized cache overwrite:
 ```text
 Interface: 192.168.56.10 --- 0x4
