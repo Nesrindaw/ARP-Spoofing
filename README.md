@@ -22,7 +22,7 @@ This repository serves as an end-to-end incident handling demonstration of an **
 
 ---
 
-## Enterprise Baseline & Ground Truth
+## Lab Baseline & Known Assets
 
 | Device Role | Hostname | IP Address | Ground Truth MAC | Interface | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
