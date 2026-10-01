@@ -1,0 +1,27 @@
+title: Unauthorized Default Gateway ARP Impersonation
+id: c4e98f62-31d7-4d92-9b63-123456789abc
+status: stable
+description: Detects unsolicited or spoofed ARP reply packets claiming the IP address of the corporate default gateway using an unauthorized Layer 2 MAC address.
+references:
+    - https://attack.mitre.org/techniques/T1557/002/
+author: SOC Analyst Lab & Research
+date: 2026-09-18
+tags:
+    - attack.credential_access
+    - attack.collection
+    - attack.t1557.002
+logsource:
+    category: network
+    product: zeek
+    service: arp
+detection:
+    selection:
+        operation: 'reply'
+        src_ip: '192.168.56.1'
+    filter:
+        src_mac: '00:0c:29:c8:9a:03'
+    condition: selection and not filter
+falsepositives:
+    - Authorized network hardware replacement
+    - High-Availability router failover (HSRP/VRRP/CARP)
+level: high
