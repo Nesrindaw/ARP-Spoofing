@@ -1,6 +1,6 @@
 # ARP-Spoofing
 
-# Enterprise SOC Investigation: Adversary-in-the-Middle (ARP Cache Poisoning)
+## SOC Investigation: Adversary-in-the-Middle (ARP Cache Poisoning)
 
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-T1557.002-red.svg)](https://attack.mitre.org/techniques/T1557/002/)
 [![SOC Level](https://img.shields.io/badge/SOC%20Role-L1%20%2F%20L2%20Analyst-blue.svg)](#)
