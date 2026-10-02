@@ -26,12 +26,12 @@ The **Address Resolution Protocol (ARP)** is a critical Layer 2 (Data Link Layer
 
 #### The Underlying Weakness:
 ARP was originally designed with zero built-in security considerations. It suffers from two fundamental flaws:
-1. **Stateless Nature:** Devices will accept and process ARP replies—updating their local ARP cache—even if they never sent a corresponding ARP request (Unsolicited ARP Reply).
+1. **Stateless Nature:** Devices will accept and process ARP replies-updating their local ARP cache-even if they never sent a corresponding ARP request (Unsolicited ARP Reply).
 2. **Lack of Authentication:** There is no mechanism to verify the sender's identity or encrypt the exchange. A target device will blindly trust the IP-to-MAC mapping provided in the packet.
 
 #### Attacker Objectives:
 * Establish an inline position between a corporate workstation and the default gateway, acting as an **Adversary-in-the-Middle (AiTM)**.
-* Intercept, inspect, and potentially modify unencrypted network traffic (e.g., HTTP, DNS).
+* Intercept, inspect, and potentially modify unencrypted network traffic ( HTTP, DNS).
 * Trigger a localized Denial of Service (DoS) by dropping intercepted packets instead of forwarding them.
 
 #### Endpoint/User Experience:
@@ -120,7 +120,7 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 
 **3. Production Sigma Rule:**
 
- Sigma Rule
+ [Sigma Rule](https://github.com/Nesrindaw/ARP-Spoofing/blob/main/Sigma%20Rule)
 
 ### Investigation & Timeline Analysis
 
@@ -171,18 +171,17 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
                    │
                    ▼
        Is it a scheduled change or VRRP Failover?
-             ├── YES ──> [ Close as Benign / Update Baseline ]
-             └── NO
+              YES ──> [ Close as Benign / Update Baseline ]
+              NO
                    │
                    ▼
        Does the packet claim the Gateway IP from an unauthorized MAC?
-             ├── NO  ──> [ Investigate as Host-to-Host Conflict ]
-             └── YES ──> [ CONFIRMED ARP SPOOFING / MITM ]
-                   │
-                   ├── 1. Shutdown Attacker Switch Port
-                   ├── 2. Flush ARP Caches (arp -d *)
-                   ├── 3. Analyze PCAP for Plaintext Data Exposure
-                   └── 4. Implement DAI & DHCP Snooping
+             NO  ──> [ Investigate as Host-to-Host Conflict ]
+             YES ──> [ CONFIRMED ARP SPOOFING / MITM ]
+                    1. Shutdown Attacker Switch Port
+                    2. Flush ARP Caches (arp -d *)
+                    3. Analyze PCAP for Plaintext Data Exposure
+                    4. Implement DAI & DHCP Snooping
 
 ```
 
