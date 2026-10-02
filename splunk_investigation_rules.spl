@@ -1,0 +1,39 @@
+/* ===================================================================
+   Enterprise SOC Detection Rules: ARP Cache Poisoning (AiTM)
+   Author: SOC L1/L2 Incident Analyst
+   Date: 2026-09-18
+   Description: Splunk SPL queries for triaging, detecting, and 
+   hunting unauthorized Layer 2 gateway impersonation.
+   =================================================================== */
+
+/* 1. Initial Triage & Packet Extraction
+   Extracts raw PCAP data converted to CSV for baseline viewing. */
+index=* source="*arp_attack.csv*"
+| table _time, Source, Destination, Protocol, Info
+
+
+/* 2. Bidirectional ARP Poisoning Detection
+   Detects a single MAC address attempting to claim multiple IP 
+   addresses (Spoofing both Gateway and Victim) rapidly. */
+source="*arp_attack.csv*" "is at"
+| rex field=_raw "(?<claimed_ip>\d+\.\d+\.\d+\.\d+) is at (?<attacker_mac>[a-fA-F0-9:]{17})"
+| stats count, values(claimed_ip) as spoofed_ips by attacker_mac
+| where count > 10
+
+
+/* 3. Corporate Gateway Impersonation Alert (Production SPL)
+   Triggers a critical alert if any MAC address other than the 
+   authentic Gateway MAC (00:0c:29:c8:9a:03) claims the Gateway IP (192.168.56.1). */
+source="*arp_attack.csv*" "192.168.56.1 is at"
+| rex field=_raw "(?<gateway_ip>192\.168\.56\.1) is at (?<attacker_mac>[a-fA-F0-9:]{17})"
+| where attacker_mac!="00:0c:29:c8:9a:03"
+| stats count, earliest(_time) as first_seen, latest(_time) as last_seen by gateway_ip, attacker_mac
+| eval Alert_Status="CRITICAL: Unauthorized Gateway ARP Claim"
+
+
+/* 4. Threat Hunting: ICMP Redirect Anomalies (Rogue Forwarder)
+   Hunts for endpoints acting as rogue routers. An AiTM attacker 
+   will often issue ICMP redirects to optimize routing and prevent DoS. */
+source="*arp_attack.csv*" "ICMP" "Redirect"
+| rex field=_raw "\"(?<src_entity>[^\"]+)\",\s*\"(?<dst_entity>[^\"]+)\",\s*\"ICMP\",\s*\"\d+\",\s*\"(?<icmp_info>[^\"]+)\""
+| stats count by src_entity, dst_entity, icmp_info
