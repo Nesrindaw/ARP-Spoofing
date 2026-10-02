@@ -53,14 +53,14 @@ In a well-executed attack, the end-user will not experience a network disconnect
 * This bidirectional poisoning forces all outbound and inbound Layer 2 traffic to route directly through the attacker's network interface.
 
 ```text
-[ Legit Gateway: pfSense ]         [ Adversary: Kali Linux ]          [ Corporate Workstation ]
+  Legit Gateway: pfSense             Adversary: Kali Linux             Corporate Workstation 
       192.168.56.1                       192.168.56.11                      192.168.56.10
    00:0c:29:c8:9a:03                   00:0c:29:fd:17:a1                  00:0c:29:7b:4d:54
            │                                   │                                  │
            │ <── Spoofed Reply (I am .10) ─────┤                                  │
            │                                   ├──── Spoofed Reply (I am .1) ───> │
-           ▼                                   │                                  ▼
-   [ Gateway Poisoned ]                        │                         [ Workstation Poisoned ]
+                                               │                                   
+     Gateway Poisoned                          │                           Workstation Poisoned 
            │                                   │                                  │
            │ <════════ Routed & Forwarded L2 Traffic (DNS / TCP) ═══════════════> │
 
