@@ -149,7 +149,7 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 
 **Hunting Query (SPL):**
 
-**Proof of Execution Threat Hunting (Gateway Impersonation & ICMP Redirects):**
+**Threat Hunting (Gateway Impersonation & ICMP Redirects):**
 
 ![Splunk Hunting Query](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Splunk%20Hunting%20Query%20.png)
 
