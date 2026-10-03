@@ -106,16 +106,22 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 
 **2. Splunk Enterprise Investigation Query (SPL):**
 
+ [Splunk Investigation Rules](https://github.com/Nesrindaw/ARP-Spoofing/blob/main/Splunk%20Investigation%20Rules.spl)
+
 **Proof of Execution - Initial Triage:**
+
 ![Initial Triage](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Initial%20Triage%20Query.png)
 
 **Proof of Execution - Bidirectional Poisoning Detection:**
+
 ![Bidirectional Poisoning](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Bidirectional%20Poisoning.png)
+
 
 ![Enterprise Investigation SPL](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Enterprise%20Investigation%20SPL.png)
 
 **Proof of Execution - Gateway Impersonation Alert:**
-![Gateway Enterprise Detection Alert](https://raw.github.com/Nesrindaw/ARP-Spoofing/blob/main/screenshots/Enterprise%20Investigation%20SPL.png)
+
+![Gateway Enterprise Detection Alert](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/blob/main/screenshots/Enterprise%20Investigation%20SPL.png)
  
  Successfully isolated MAC `00:0c:29:fd:17:a1` generating 2,912 frames claiming both the gateway and the workstation.
 
