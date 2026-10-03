@@ -48,7 +48,7 @@ Interface: 192.168.56.10 --- 0x4
 
 Explore the full investigation artifacts by navigating through the detailed files below:
 
-* **[Technical Analysis & Evidence Map](./ARP-Spoofing-Analysis.md)** - Step-by-step technical breakdown, packet forensics, and lab baseline.
+* **[Analysis & Evidence Map](./ARP-Spoofing-Analysis.md)** - Step-by-step technical breakdown, packet forensics, and lab baseline.
 * **[Incident Report](./Report%20INC-2026-0918-NET01.md)** - Official NIST-compliant SOC report for this incident.
 * **[Splunk Investigation Rules](./Splunk%20Investigation%20Rules.spl)** - Custom SPL queries used for triage, detection, and threat hunting.
 * **[Sigma Detection Rule](./Sigma%20Rule.yml)** - Production-ready Sigma rule to detect unauthorized Gateway ARP claims.
