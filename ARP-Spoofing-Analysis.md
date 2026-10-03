@@ -75,7 +75,8 @@ All emulation steps were executed within an isolated host-only subnet (`192.168.
 | Corporate Victim | Windows 10 | 192.168.56.10 | 00:0c:29:7b:4d:54 | Ethernet0 |
 | Adversary Host | kali | 192.168.56.11 | 00:0c:29:fd:17:a1 | eth0 |
 
-**Proof of Baseline Configuration (Pre-Attack):**
+**Baseline Configuration (Pre-Attack):**
+
 ![pfSense Gateway Baseline](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/MAC%20Address%20pfSense%20Corporate%20Gateway.png)
 ![Windows 10 Victim Baseline](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Corporate%20Victim%20Windows%2010%20MAC%20Address.png)
 ![Kali Attacker Baseline](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Suspected%20Attacker%20kali%20.png)
@@ -103,7 +104,8 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 | Switch Telemetry | Supporting Evidence | Syslog errors triggered by Dynamic ARP Inspection (if enabled). |
 | Windows Event Logs | Limited / Blind Spot | Windows rarely logs dynamic ARP updates; Event ID 4199 only fires on explicit hard IP conflicts. |
 
-**Proof of Execution - Endpoint Cache Poisoning:**
+**Endpoint Cache Poisoning:**
+
 ![Poisoned ARP Table](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Arp%20Spoofing.png)
 
 ### Detection Engineering
