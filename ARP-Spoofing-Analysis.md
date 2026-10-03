@@ -146,7 +146,13 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 ### Hypothesis-Driven Threat Hunting
 
 **Hunting Hypothesis:** An adversary maintaining a persistent inline position will emit control frames (ICMP Redirects) to manage traffic flows and prevent connection drops.
+
 **Hunting Query (SPL):**
+**Proof of Execution - Threat Hunting (Gateway Impersonation & ICMP Redirects):**
+
+![Splunk Hunting Query](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Splunk%20Hunting%20Query%20.png)
+
+![Splunk Hunting ICMP Redirect](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Splunk%20Hunting%20ICMP%20Redirect.png)
 
 *Hunting Finding:* Host `192.168.56.11` dispatched 123 Redirect frames to the workstation and 75 to the gateway, proving functional router impersonation.
 
