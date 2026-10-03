@@ -157,21 +157,19 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 ### Analyst Decision Tree
 
 ```text
-[ Alert: Unsolicited ARP / Duplicate IP ]
+    Alert: Unsolicited ARP / Duplicate IP 
                    │
-                   ▼
        Is it a scheduled change or VRRP Failover?
-              YES ──> [ Close as Benign / Update Baseline ]
+              YES ──>  Close as Benign / Update Baseline 
               NO
                    │
-                   ▼
        Does the packet claim the Gateway IP from an unauthorized MAC?
-             NO  ──> [ Investigate as Host-to-Host Conflict ]
-             YES ──> [ CONFIRMED ARP SPOOFING / MITM ]
-                    1. Shutdown Attacker Switch Port
-                    2. Flush ARP Caches (arp -d *)
-                    3. Analyze PCAP for Plaintext Data Exposure
-                    4. Implement DAI & DHCP Snooping
+             NO  ──>  Investigate as Host-to-Host Conflict 
+             YES ──>  CONFIRMED ARP SPOOFING / MITM
+                         1. Shutdown Attacker Switch Port
+                         2. Flush ARP Caches (arp -d *)
+                         3. Analyze PCAP for Plaintext Data Exposure
+                         4. Implement DAI & DHCP Snooping
 
 ```
 
