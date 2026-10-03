@@ -52,3 +52,5 @@ Explore the full investigation artifacts by navigating through the detailed file
 * **[Incident Report](./Report%20INC-2026-0918-NET01.md)** - Official NIST-compliant SOC report for this incident.
 * **[Splunk Investigation Rules](./Splunk%20Investigation%20Rules.spl)** - Custom SPL queries used for triage, detection, and threat hunting.
 * **[Sigma Detection Rule](./Sigma%20Rule.yml)** - Production-ready Sigma rule to detect unauthorized Gateway ARP claims.
+* **[Raw Network Capture (PCAP)](./arp_attack.pcapng)** - The network traffic captured during the simulated attack.
+* **[Splunk Ingestion Data (CSV)](./arp_attack.zip)** - The exported logs fed into Splunk to build the detection queries.
