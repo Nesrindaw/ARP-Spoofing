@@ -115,7 +115,7 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 ![Enterprise Investigation SPL](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Enterprise%20Investigation%20SPL.png)
 
 **Proof of Execution - Gateway Impersonation Alert:**
-![Gateway Enterprise Detection Alert](https://raw.github.com/Nesrindaw/ARP-Spoofing/blob/main/screenshots/Gateway%20(Enterprise%20Detection%20Alert.png)
+![Gateway Enterprise Detection Alert](https://raw.github.com/Nesrindaw/ARP-Spoofing/blob/main/screenshots/Enterprise%20Investigation%20SPL.png)
  
  Successfully isolated MAC `00:0c:29:fd:17:a1` generating 2,912 frames claiming both the gateway and the workstation.
 
