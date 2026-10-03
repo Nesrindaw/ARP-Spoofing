@@ -104,6 +104,14 @@ sudo arpspoof -i eth0 -t 192.168.56.1 192.168.56.10
 * Detect Duplicate IP Allocation: `arp.duplicate-address-detected`
 * Isolate Malicious Unsolicited Replies: `arp.opcode == 2 && eth.src == 00:0c:29:fd:17:a1`
 
+**Wireshark Network Forensics:**
+
+![Duplicate IP Warning](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/Duplicate%20IP%20address%20detected.png)
+
+![ARP Duplicate Address Filter](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/arp.duplicate-address-detected.png)
+
+![Unsolicited ARP Replies](https://raw.githubusercontent.com/Nesrindaw/ARP-Spoofing/main/screenshots/arp.opcode%20==%202.png)
+
 **2. Splunk Enterprise Investigation Query (SPL):**
 
  [Splunk Investigation Rules](https://github.com/Nesrindaw/ARP-Spoofing/blob/main/Splunk%20Investigation%20Rules.spl)
