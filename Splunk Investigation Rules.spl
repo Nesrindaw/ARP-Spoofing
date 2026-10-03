@@ -1,10 +1,8 @@
-/* ===================================================================
-   Enterprise SOC Detection Rules: ARP Cache Poisoning (AiTM)
+/* Enterprise SOC Detection Rules: ARP Cache Poisoning (AiTM)
    Author: SOC L1/L2 Incident Analyst
    Date: 2026-09-18
    Description: Splunk SPL queries for triaging, detecting, and 
-   hunting unauthorized Layer 2 gateway impersonation.
-   =================================================================== */
+   hunting unauthorized Layer 2 gateway impersonation. */
 
 /* 1. Initial Triage & Packet Extraction
    Extracts raw PCAP data converted to CSV for baseline viewing. */
