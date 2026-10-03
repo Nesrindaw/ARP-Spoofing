@@ -41,7 +41,7 @@ Interface: 192.168.56.10 --- 0x4
   Internet Address      Physical Address     Type
   192.168.56.1          00-0c-29-fd-17-a1    dynamic  <-- Spoofed (Attacker MAC)
   192.168.56.11         00-0c-29-fd-17-a1    dynamic  <-- Attacker True Identity
-
+```
 ---
 
 ## Repository Contents & Quick Links
