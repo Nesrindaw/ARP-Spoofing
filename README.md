@@ -1,12 +1,12 @@
 # ARP-Spoofing
 
-## SOC Investigation: Adversary in the Middle (ARP Cache Poisoning)
+## SOC Investigation: Adversary in the Middle (ARP Spoofing)
 
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-T1557.002-red.svg)](https://attack.mitre.org/techniques/T1557/002/)
 [![SOC Level](https://img.shields.io/badge/SOC%20Role-L1%20%2F%20L2%20Analyst-blue.svg)](#)
 [![Artifacts](https://img.shields.io/badge/Telemetry-PCAP%20%7C%20Splunk%20%7C%20Host-green.svg)](#)
 
-This repository serves as an end-to-end incident handling demonstration of an **ARP Cache Poisoning (AiTM) attack** within a virtual lab. It establishes a threat emulation, packet forensics, custom SIEM detection, hypothesis-driven hunting, blast radius scoping, and remediation.
+This repository serves as an end-to-end incident handling demonstration of an **ARP Spoofing attack** within a virtual lab. It establishes a threat emulation, packet forensics, custom SIEM detection, hypothesis-driven hunting, blast radius scoping, and remediation.
  
 ---
 
