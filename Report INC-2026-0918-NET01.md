@@ -20,7 +20,7 @@
 ---
 
 ### 2. Executive Summary
-On September 18, 2026, at 00:36:00 UTC, the Security Operations Center (SOC) detected an anomalous flood of unsolicited ARP replies on the corporate workstation network segment (`192.168.56.0/24`). Real-time cross-correlation between network packet telemetry and SIEM detection rules confirmed an active **ARP Cache Poisoning / Adversary-in-the-Middle (AiTM)** attack (MITRE ATT&CK T1557.002).
+On September 18, 2026, at 00:36:00 UTC, the Security Operations Center (SOC) detected an anomalous flood of unsolicited ARP replies on the corporate workstation network segment (`192.168.56.0/24`). Real-time cross-correlation between network packet telemetry and SIEM detection rules confirmed an active **ARP-Spoofing / Adversary-in-the-Middle (AiTM)** attack (MITRE ATT&CK T1557.002).
 
 An unauthorized endpoint identifying with MAC address `00:0c:29:fd:17:a1` concurrently impersonated the corporate default gateway (`192.168.56.1`) and target workstation `WS-014` (`192.168.56.10`). The adversary enabled IP packet forwarding and issued ICMP Redirect frames to actively route and inspect endpoint network communications. Forensic deep-packet analysis of the captured streams established that the passing traffic comprised DNS resolution requests and TLS-encrypted web sessions. **No cleartext credentials, authentication tokens, or sensitive payload data were compromised during the attack window.** Rapid containment successfully neutralized the rogue host, flushed poisoned cache tables, and restored verified network baseline operations.
 
