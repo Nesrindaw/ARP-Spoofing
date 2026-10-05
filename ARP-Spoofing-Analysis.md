@@ -14,7 +14,7 @@
 | **Target Platforms** | Any IPv4-enabled OS (Windows, Linux, macOS, Network Appliances) |
 | **Required Access** | Unprivileged Local Network Access |
 | **Typical Attacker Objective** | Traffic Interception, Man-in-the-Middle (MITM), Session Hijacking, DoS |
-| **SOC Relevance** | **The Master Example** for Network Packet Forensics, Telemetry Triaging, and SIEM Rule Logic |
+| **SOC Relevance** | For Network Packet Forensics, Telemetry Triaging, and SIEM Rule Logic |
 | **Difficulty** | Low (Automated open-source tooling readily available) |
 | **Estimated Reading Time** | 25 Minutes |
 
